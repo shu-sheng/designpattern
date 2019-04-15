@@ -10,6 +10,10 @@ interface AmericaPower {
     public void threeStep();
 }
 
+interface ChinaPower {
+    public void twoStep();
+}
+
 class AmePower implements AmericaPower {
     @Override
     public void threeStep() {
@@ -17,11 +21,7 @@ class AmePower implements AmericaPower {
     }
 }
 
-interface ChinaPower {
-    public void twoStep();
-}
-
-class CPower extends AmePower implements ChinaPower {
+class Adapter extends AmePower implements ChinaPower {
     @Override
     public void twoStep() {
         System.out.println("为twoStep添加threeStep的能力");
@@ -32,7 +32,7 @@ class CPower extends AmePower implements ChinaPower {
 public class AdapterClient1 {
 
     public static void main(String[] args) {
-        ChinaPower chinaPower = new CPower();
+        ChinaPower chinaPower = new Adapter();
         //插入两脚的电源线，可以适配三角的插头。
         chinaPower.twoStep();
     }
