@@ -1,4 +1,4 @@
-package structuralpattern.adapterpattern;
+package structuralpattern.adapterpattern.demo01;
 
 /**
  * @Description 类适配器（主要使用继承方式来适配）
@@ -6,32 +6,33 @@ package structuralpattern.adapterpattern;
  * @Email shusheng@yiji.com
  * @Date 2017-07-13
  */
-interface AmericaPower1 {
+interface AmericaPower {
     public void threeStep();
 }
 
-class APower1 implements AmericaPower1 {
+class AmePower implements AmericaPower {
     @Override
     public void threeStep() {
-        System.out.println("我是三角的电源");
+        System.out.println("我是threeStep");
     }
 }
 
-interface ChinaPower1 {
+interface ChinaPower {
     public void twoStep();
 }
 
-class CPower1 extends APower1 implements ChinaPower1 {
+class CPower extends AmePower implements ChinaPower {
     @Override
     public void twoStep() {
+        System.out.println("为twoStep添加threeStep的能力");
         this.threeStep();
     }
 }
 
-public class Client1 {
+public class AdapterClient1 {
 
     public static void main(String[] args) {
-        ChinaPower1 chinaPower = new CPower1();
+        ChinaPower chinaPower = new CPower();
         //插入两脚的电源线，可以适配三角的插头。
         chinaPower.twoStep();
     }
