@@ -1,4 +1,4 @@
-package structuralpattern.bridgepattern;
+package structuralpattern.bridgepattern.demo02;
 
 /**
  * @Description 运用桥接模式
@@ -6,15 +6,15 @@ package structuralpattern.bridgepattern;
  * @Email shusheng@yiji.com
  * @Date 2017-07-31
  */
-abstract class AbstractRoad2{
-    AbstractCar2 aCar;
+abstract class AbstractCar{
     void run(){};
 }
-abstract class AbstractCar2{
+abstract class AbstractRoad{
+    AbstractCar aCar;
     void run(){};
 }
 
-class Street2 extends AbstractRoad2{
+class Street extends AbstractRoad{
     @Override
     void run() {
         super.run();
@@ -22,7 +22,7 @@ class Street2 extends AbstractRoad2{
         System.out.println("在市区街道行驶");
     }
 }
-class SpeedWay2 extends AbstractRoad2{
+class SpeedWay extends AbstractRoad{
     @Override
     void run() {
         super.run();
@@ -30,14 +30,14 @@ class SpeedWay2 extends AbstractRoad2{
         System.out.println("在高速公路行驶");
     }
 }
-class Car2 extends AbstractCar2{
+class Car extends AbstractCar{
     @Override
     void run() {
         super.run();
         System.out.print("小汽车");
     }
 }
-class Bus2 extends AbstractCar2{
+class Bus extends AbstractCar{
     @Override
     void run() {
         super.run();
@@ -45,14 +45,18 @@ class Bus2 extends AbstractCar2{
     }
 }
 
-public class Client2 {
+public class Client {
     public static void main(String[] args){
-        AbstractRoad2 speedWay = new SpeedWay2();
-        speedWay.aCar = new Car2();
+        AbstractRoad speedWay = new SpeedWay();
+        speedWay.aCar = new Car();
+        speedWay.run();
+        speedWay.aCar = new Bus();
         speedWay.run();
 
-        AbstractRoad2 street = new Street2();
-        street.aCar = new Bus2();
+        AbstractRoad street = new Street();
+        street.aCar = new Car();
+        street.run();
+        street.aCar = new Bus();
         street.run();
     }
 }

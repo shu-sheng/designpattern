@@ -1,19 +1,24 @@
-package structuralpattern.bridgepattern;
+package structuralpattern.bridgepattern.demo0;
 
 /**
  * @Description 运用桥接模式，增加一个维度“人”
  * @Author Created by shusheng.
  * @Email shusheng@yiji.com
- * @Date 2017-07-31
+ * @Date 2017-07-1
  */
-abstract class AbstractRoad3{
-    AbstractCar3 aCar;
+abstract class AbstractCar{
     void run(){};
 }
-abstract class AbstractCar3{
+abstract class AbstractRoad{
+    AbstractCar aCar;
     void run(){};
 }
-class Street3 extends AbstractRoad3{
+abstract class People {
+    AbstractRoad road;
+    void run() {}
+}
+
+class Street extends AbstractRoad{
     @Override
     void run() {
         super.run();
@@ -21,7 +26,7 @@ class Street3 extends AbstractRoad3{
         System.out.println("在市区街道行驶");
     }
 }
-class SpeedWay3 extends AbstractRoad3{
+class SpeedWay extends AbstractRoad{
     @Override
     void run() {
         super.run();
@@ -29,26 +34,22 @@ class SpeedWay3 extends AbstractRoad3{
         System.out.println("在高速公路行驶");
     }
 }
-class Car3 extends AbstractCar3{
+class Car extends AbstractCar{
     @Override
     void run() {
         super.run();
         System.out.print("小汽车");
     }
 }
-class Bus3 extends AbstractCar3{
+class Bus extends AbstractCar{
     @Override
     void run() {
         super.run();
         System.out.print("公交车");
     }
 }
-abstract class People3 {
-    AbstractRoad3 road;
 
-    void run() {}
-}
-class Man3 extends People3{
+class Man extends People{
     @Override
     void run() {
         super.run();
@@ -56,7 +57,7 @@ class Man3 extends People3{
         road.run();
     }
 }
-class Woman3 extends People3{
+class Woman extends People{
     @Override
     void run() {
         super.run();
@@ -64,13 +65,18 @@ class Woman3 extends People3{
         road.run();
     }
 }
-public class Client3 {
+public class Client {
     public static void main(String[] args) {
-        AbstractRoad3 speedWay = new SpeedWay3();
-        speedWay.aCar = new Car3();
+        People man1 = new Man();
+        AbstractRoad speedWay1 = new SpeedWay();
+        speedWay1.aCar = new Car();
+        man1.road = speedWay1;
+        man1.run();
 
-        People3 man = new Man3();
-        man.road = speedWay;
-        man.run();
+        People man2 = new Man();
+        AbstractRoad speedWay2 = new Street();
+        speedWay2.aCar = new Bus();
+        man2.road = speedWay2;
+        man2.run();
     }
 }
