@@ -1,10 +1,10 @@
-package structuralpattern.compositepattern.demo02;
+package structuralpattern.compositepattern.demo03;
 
 import java.util.LinkedList;
 import java.util.List;
 
 /**
- * @Description 安全式组合模式
+ * @Description 透明式组合模式
  * @Author Created by shusheng.
  * @Email shusheng@yiji.com
  * @Date 2017-08-01
@@ -17,14 +17,33 @@ abstract class Component {
         this.name = name;
     }
 
-    // 公有操作
+    // 增加一个节点
+    public abstract void add(Component component);
+    // 移除一个节点
+    public abstract void remove(Component component);
+    //显示层级结构
     public abstract void display(int level);
+
+    // 公有操作
+    public void getName() {
+        System.out.println(this.name);
+    }
 }
 
 // 树叶构件类
 class Leaf extends Component {
     public Leaf(String name) {
         super(name);
+    }
+
+    @Override
+    public void add(Component component) {
+        System.out.println("Can not add a component to a leaf");
+    }
+
+    @Override
+    public void remove(Component component) {
+        System.out.println("Can not remove a component to a leaf");
     }
 
     @Override
@@ -40,15 +59,15 @@ class Composite extends Component {
 
     public Composite(String name) {
         super(name);
-        this.children = new LinkedList<Component>();
     }
-    // 添加一个节点，可能是树枝、叶子
-    public void add(Component child) {
-        children.add(child);
+
+    @Override
+    public void add(Component component) {
+        children.add(component);
     }
-    // 删除一个节点，可能是树枝、叶子
-    public void remove(String child) {
-        children.remove(child);
+    @Override
+    public void remove(Component component) {
+        children.remove(component);
     }
     @Override
     public void display(int level) {
@@ -61,17 +80,17 @@ class Composite extends Component {
             c.display(level+1);
         }
     }
-
 }
+
+
 
 public class Client {
 
     public static void main(String[] args) {
+        Component root = new Composite("树根");
 
-        Composite root = new Composite("树根");
-
-        Composite branch01 = new Composite("树枝01");
-        Composite branch02 = new Composite("树枝02");
+        Component branch01 = new Composite("树枝01");
+        Component branch02 = new Composite("树枝02");
 
         root.add(branch01);
         root.add(branch02);
@@ -90,7 +109,6 @@ public class Client {
         branch02.add(leaf05);
 
         root.display(1);
-
     }
 
 }
