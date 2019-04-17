@@ -1,4 +1,4 @@
-package structuralpattern.facadepattern;
+package structuralpattern.facadepattern.demo02;
 
 /**
  * @Description 外观模式
@@ -70,7 +70,7 @@ class WatchTvSwtichFacade {
     }
 }
 
-public class Client2 {
+public class Client {
     public static void main(String[] args) {
         //实例化组件
         Light light = new Light();

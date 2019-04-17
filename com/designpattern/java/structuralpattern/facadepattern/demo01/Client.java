@@ -1,4 +1,4 @@
-package structuralpattern.facadepattern;
+package structuralpattern.facadepattern.demo01;
 
 /**
  * @Description 外观模式
@@ -11,13 +11,11 @@ class SubSystemA {
         //业务实现代码
     }
 }
-
 class SubSystemB {
     public void MethodB() {
         //业务实现代码
     }
 }
-
 class SubSystemC {
     public void MethodC() {
         //业务实现代码
@@ -36,7 +34,7 @@ class Facade {
     }
 }
 
-public class Client1 {
+public class Client{
     public static void Main(String[] args) {
         Facade facade = new Facade();
         facade.Method();
