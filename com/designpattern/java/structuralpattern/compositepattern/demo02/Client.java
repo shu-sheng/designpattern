@@ -1,4 +1,4 @@
-package structuralpattern.compositepattern;
+package structuralpattern.compositepattern.demo02;
 
 import java.util.LinkedList;
 
@@ -36,12 +36,10 @@ class Composite extends Component {
     public void add(Component child) {
         this.children.add(child);
     }
-
     // 删除一个节点，可能是树枝、叶子
     public void remove(String child) {
         this.children.remove(child);
     }
-
     // 获取子树
     public LinkedList<Component> getChildren() {
         return this.children;
@@ -50,13 +48,12 @@ class Composite extends Component {
 
 // 树叶构件类
 class Leaf extends Component {
-
     public Leaf(String name) {
         super(name);
     }
 }
 
-public class Client2 {
+public class Client {
 
     public static void main(String[] args) {
 

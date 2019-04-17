@@ -1,4 +1,4 @@
-package structuralpattern.compositepattern;
+package structuralpattern.compositepattern.demo01;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,29 +9,29 @@ import java.util.List;
  * @Email shusheng@yiji.com
  * @Date 2017-08-01
  */
-class Employee1 {
+class Employee {
     private String name;
     private String dept;
     private int salary;
-    private List<Employee1> subordinates;
+    private List<Employee> subordinates;
 
     //构造函数
-    public Employee1(String name,String dept, int sal) {
+    public Employee(String name,String dept, int sal) {
         this.name = name;
         this.dept = dept;
         this.salary = sal;
-        subordinates = new ArrayList<Employee1>();
+        subordinates = new ArrayList<Employee>();
     }
 
-    public void add(Employee1 e) {
+    public void add(Employee e) {
         subordinates.add(e);
     }
 
-    public void remove(Employee1 e) {
+    public void remove(Employee e) {
         subordinates.remove(e);
     }
 
-    public List<Employee1> getSubordinates(){
+    public List<Employee> getSubordinates(){
         return subordinates;
     }
 
@@ -44,17 +44,16 @@ class Employee1 {
 
 public class Client1 {
     public static void main(String[] args) {
-        Employee1 CEO = new Employee1("John","CEO", 30000);
+        Employee CEO = new Employee("John","CEO", 30000);
 
-        Employee1 headSales = new Employee1("Robert","Head Sales", 20000);
+        Employee headSales = new Employee("Robert","Head Sales", 20000);
+        Employee headMarketing = new Employee("Michel","Head Marketing", 20000);
 
-        Employee1 headMarketing = new Employee1("Michel","Head Marketing", 20000);
+        Employee clerk1 = new Employee("Laura","Marketing", 10000);
+        Employee clerk2 = new Employee("Bob","Marketing", 10000);
 
-        Employee1 clerk1 = new Employee1("Laura","Marketing", 10000);
-        Employee1 clerk2 = new Employee1("Bob","Marketing", 10000);
-
-        Employee1 salesExecutive1 = new Employee1("Richard","Sales", 10000);
-        Employee1 salesExecutive2 = new Employee1("Rob","Sales", 10000);
+        Employee salesExecutive1 = new Employee("Richard","Sales", 10000);
+        Employee salesExecutive2 = new Employee("Rob","Sales", 10000);
 
         CEO.add(headSales);
         CEO.add(headMarketing);
@@ -67,9 +66,9 @@ public class Client1 {
 
         //打印该组织的所有员工
         System.out.println(CEO);
-        for (Employee1 headEmployee : CEO.getSubordinates()) {
+        for (Employee headEmployee : CEO.getSubordinates()) {
             System.out.println(headEmployee);
-            for (Employee1 employee : headEmployee.getSubordinates()) {
+            for (Employee employee : headEmployee.getSubordinates()) {
                 System.out.println(employee);
             }
         }
