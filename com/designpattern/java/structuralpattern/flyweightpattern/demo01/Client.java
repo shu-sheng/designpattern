@@ -1,4 +1,4 @@
-package structuralpattern.flyweightpattern;
+package structuralpattern.flyweightpattern.demo01;
 
 import java.util.HashMap;
 
@@ -6,7 +6,7 @@ import java.util.HashMap;
  * @Description 享元模式
  * @Author Created by shusheng.
  * @Email shusheng@yiji.com
- * @Date 2017-08-02
+ * @Date 201-04-17
  */
 interface Shape {
     void draw();
@@ -55,7 +55,7 @@ class ShapeFactory {
     }
 }
 
-public class Client1 {
+public class Client {
     private static final String colors[] =
             {"Red", "Green", "Blue", "White", "Black"};
 
