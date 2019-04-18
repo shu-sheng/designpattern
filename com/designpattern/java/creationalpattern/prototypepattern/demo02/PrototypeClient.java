@@ -1,9 +1,9 @@
-package creationalpattern.prototypepattern;
+package creationalpattern.prototypepattern.demo02;
 
 import java.io.*;
 
 /**
- * @Description 深拷贝
+ * @Description 采用序列化的方式实现深克隆
  * @Author Created by shusheng.
  * @Email shusheng@yiji.com
  * @Date 2017-07-12
@@ -75,7 +75,7 @@ class BookB implements Serializable {
 
 }
 
-public class PrototypeTest2 {
+public class PrototypeClient {
 
     public static void main(String[] args) throws ClassNotFoundException, IOException {
         BookB book1 = new BookB();
@@ -92,6 +92,7 @@ public class PrototypeTest2 {
         System.out.println(book1.getPageNum() == book2.getPageNum());   // true
         System.out.println(book1.getTitle() == book2.getTitle());        // false
         System.out.println(book1.getAuthorB() == book2.getAuthorB());        // false
+        System.out.println(book1.getAuthorB().getName() == book2.getAuthorB().getName()); // false
 
     }
 }

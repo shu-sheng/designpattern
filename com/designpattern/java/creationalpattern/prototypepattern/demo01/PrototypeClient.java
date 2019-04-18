@@ -1,4 +1,4 @@
-package creationalpattern.prototypepattern;
+package creationalpattern.prototypepattern.demo01;
 
 /**
  * @Description 浅拷贝
@@ -71,7 +71,7 @@ class BookA implements Cloneable {
 
 }
 
-public class PrototypeTest1 {
+public class PrototypeClient {
 
     public static void main(String[] args) {
 
