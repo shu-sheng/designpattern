@@ -1,4 +1,4 @@
-package creationalpattern.singletonpattern.demo1;
+package creationalpattern.singletonpattern.demo01;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

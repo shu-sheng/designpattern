@@ -1,4 +1,4 @@
-package creationalpattern.factorymethodpattern.demo1;
+package creationalpattern.factorymethodpattern.demo01;
 
 /**
  * @Description 不使用工厂方法模式，生产一台车.调用者为了组装汽车还需要另外实例化发动机、底盘和轮胎，

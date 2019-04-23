@@ -1,4 +1,4 @@
-package creationalpattern.simplefactory.demo1.Product;
+package creationalpattern.simplefactory.demo01.Product;
 
 /**
  * @author shusheng

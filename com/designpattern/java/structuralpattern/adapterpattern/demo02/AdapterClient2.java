@@ -1,4 +1,4 @@
-package structuralpattern.adapterpattern.demo2;
+package structuralpattern.adapterpattern.demo02;
 
 /**
  * @Description 对象适配器（通过组合来实现适配器功能）

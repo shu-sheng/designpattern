@@ -1,4 +1,4 @@
-package creationalpattern.singletonpattern.demo1;
+package creationalpattern.singletonpattern.demo01;
 
 /**
  * @author shusheng

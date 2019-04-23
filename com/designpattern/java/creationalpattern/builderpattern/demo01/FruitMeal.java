@@ -1,8 +1,8 @@
-package creationalpattern.builderpattern.demo1;
+package creationalpattern.builderpattern.demo01;
 
-import creationalpattern.builderpattern.demo1.fruit.Apple;
-import creationalpattern.builderpattern.demo1.fruit.Banana;
-import creationalpattern.builderpattern.demo1.fruit.Orange;
+import creationalpattern.builderpattern.demo01.fruit.Apple;
+import creationalpattern.builderpattern.demo01.fruit.Banana;
+import creationalpattern.builderpattern.demo01.fruit.Orange;
 
 /**
  * @author shusheng

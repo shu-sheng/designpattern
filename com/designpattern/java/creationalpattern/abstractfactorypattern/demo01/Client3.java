@@ -1,4 +1,4 @@
-package creationalpattern.abstractfactorypattern.demo1;
+package creationalpattern.abstractfactorypattern.demo01;
 
 /**
  * @Description 抽象工厂模式

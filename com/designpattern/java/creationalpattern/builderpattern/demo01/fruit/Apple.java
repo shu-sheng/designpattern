@@ -1,4 +1,4 @@
-package creationalpattern.builderpattern.demo1.fruit;
+package creationalpattern.builderpattern.demo01.fruit;
 
 /**
  * @author shusheng

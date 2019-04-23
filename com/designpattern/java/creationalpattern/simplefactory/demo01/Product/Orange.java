@@ -1,6 +1,4 @@
-package creationalpattern.simplefactory.demo1.Product;
-
-import javax.swing.plaf.synth.SynthSliderUI;
+package creationalpattern.simplefactory.demo01.Product;
 
 /**
  * @author shusheng

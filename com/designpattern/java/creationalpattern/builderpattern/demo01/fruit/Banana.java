@@ -1,4 +1,4 @@
-package creationalpattern.builderpattern.demo1.fruit;
+package creationalpattern.builderpattern.demo01.fruit;
 
 /**
  * @author shusheng
@@ -6,14 +6,14 @@ package creationalpattern.builderpattern.demo1.fruit;
  * @Email eric_wu_peng@126.com
  * @date 2019/4/12 16:40
  */
-public class Orange {
+public class Banana {
 
     private int price = 100;
 
-    public Orange(){
+    public Banana(){
     }
 
-    public Orange(int price){
+    public Banana(int price){
         this.price = price;
     }
 
@@ -27,7 +27,7 @@ public class Orange {
 
     @Override
     public String toString() {
-        return "Orange{" +
+        return "Banana{" +
                 "price=" + price +
                 '}';
     }

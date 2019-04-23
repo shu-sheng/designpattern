@@ -1,6 +1,6 @@
-package creationalpattern.simplefactory.demo1;
+package creationalpattern.simplefactory.demo01;
 
-import creationalpattern.simplefactory.demo1.Product.Fruit;
+import creationalpattern.simplefactory.demo01.Product.Fruit;
 
 /**
  * @author shusheng

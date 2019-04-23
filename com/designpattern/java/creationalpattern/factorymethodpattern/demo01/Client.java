@@ -1,4 +1,4 @@
-package creationalpattern.factorymethodpattern.demo1;
+package creationalpattern.factorymethodpattern.demo01;
 
 /**
  * @Description 使用工厂方法模式，生产一台车.使用工厂方法后，调用端的耦合度大大降低了。

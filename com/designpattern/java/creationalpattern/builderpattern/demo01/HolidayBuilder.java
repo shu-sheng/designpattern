@@ -1,15 +1,16 @@
-package creationalpattern.builderpattern.demo1;
+package creationalpattern.builderpattern.demo01;
 
-import creationalpattern.builderpattern.demo1.fruit.Apple;
-import creationalpattern.builderpattern.demo1.fruit.Banana;
-import creationalpattern.builderpattern.demo1.fruit.Orange;
+import creationalpattern.builderpattern.demo01.fruit.Apple;
+import creationalpattern.builderpattern.demo01.fruit.Banana;
+import creationalpattern.builderpattern.demo01.fruit.Orange;
+
 /**
  * @author shusheng
  * @description
  * @Email eric_wu_peng@126.com
- * @date 2019/4/12 17:56
+ * @date 2019/4/12 17:53
  */
-public class OldCustomerBuilder implements Builder{
+public class HolidayBuilder implements Builder {
     private FruitMeal fruitMeal = new FruitMeal();
 
     @Override
@@ -28,15 +29,14 @@ public class OldCustomerBuilder implements Builder{
 
     @Override
     public void buildOrange(int price) {
-        Orange fruit = new Orange(price);
-        fruitMeal.setOrange(fruit);
+        Orange orange = new Orange(price);
+        fruitMeal.setOrange(orange);
     }
 
     @Override
     public FruitMeal getFruitMeal() {
-        fruitMeal.setDiscount(10);
+        fruitMeal.setDiscount(15);
         fruitMeal.init();
         return fruitMeal;
     }
-
 }
